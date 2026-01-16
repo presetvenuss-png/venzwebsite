@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>VenzXploit - Premium Store</title>
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg-primary: #050505;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: #ffffff;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Scrollbar Hidden tapi bisa scroll */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+
+        /* Animasi Modal Fix - Gak bakal nutupin layar lagi */
+        .modal-hidden {
+            opacity: 0;
+            pointer-events: none; /* KUNCI PERBAIKAN: Biar tembus klik */
+            transform: translateY(20px) scale(0.95);
+            transition: all 0.2s ease-in;
+        }
+        .modal-visible {
+            opacity: 1;
+            pointer-events: auto; /* Bisa diklik pas muncul */
+            transform: translateY(0) scale(1);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col items-center pb-10 bg-[#050505]">
+
+    <!-- === CONTAINER UTAMA === -->
+    <div class="w-full max-w-md px-5 pt-10 pb-6 flex flex-col items-center z-10">
+        
+        <!-- HEADER PROFILE -->
+        <div class="flex flex-col items-center text-center mb-8">
+            <!-- Logo Utama VZ -->
+            <div class="relative mb-5 group">
+                <div class="w-24 h-24 rounded-full p-1 bg-neutral-900 border-2 border-red-900/50 group-hover:border-red-600 transition duration-500 overflow-hidden">
+                    <img src="venz.jpg" alt="VenzXploit Logo" class="w-full h-full object-cover rounded-full">
+                </div>
+                <div class="absolute bottom-0 right-0 bg-red-600 border-4 border-[#050505] rounded-full w-6 h-6 flex items-center justify-center">
+                    <svg class="w-3 h-3 text-white" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+                </div>
+            </div>
+
+            <h1 class="text-2xl font-black tracking-tight text-white mb-1">VENZXPLOIT<span class="text-red-600">.</span>ID</h1>
+            <p class="text-gray-400 text-xs font-medium uppercase tracking-widest">Premium Cheat Provider</p>
+        </div>
+
+        <!-- TOMBOL MENU ATAS -->
+        <div class="grid grid-cols-2 gap-3 w-full mb-8">
+            <a href="https://wa.me/6285700513821" class="bg-white text-black rounded-xl py-3 px-4 font-bold text-sm flex items-center justify-center gap-2 hover:bg-gray-200 transition active:scale-95 shadow-lg">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-8.68-2.031-9.67-.272-.098-.47-.149-.643-.149-.174 0-.347.025-.52.074-.546.149-1.289.447-1.463.546-.174.099-.646 1.164-.72 1.338-.075.174-.199 1.164-1.787 1.908-.322 1.017-1.066 1.513-2.671 2.507-.942.583-2.185.92-3.149 1.214-2.827.863-2.903.836-3.795.347-.893-.489-1.713-1.04-2.011-1.289-.297-.248-.446-.719-.496-1.115l-.049-.396c-.025-.198-.124-.843-.149-1.141-.025-.297.025-.669.173-.892.149-.223.595-1.14.744-1.264.149-.124.372-.173.669-.149.298.018.174 1.142.198.124.025.272.074.495.149 1.56.52 3.193.991 4.234 1.487 1.042.496 1.833 1.289 2.205 1.512.373.223.72.694.793.819.074.124.272.744.347 1.24.074.496.05 1.14-.074 1.488-.124.347-.546 1.04-1.017 1.413-.471.372-1.215.744-1.886.967-1.587.521-3.669.347-5.223-.719-.57-.396-1.338-1.09-1.933-1.81z"/></svg>
+                CHAT ADMIN
+            </a>
+            <a href="https://whatsapp.com/channel/0029Vb6tfKS1yT21u7fUSZ2L" class="bg-[#111] border border-[#222] text-white rounded-xl py-3 px-4 font-bold text-sm flex items-center justify-center gap-2 hover:bg-[#1a1a1a] transition active:scale-95">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h10"/><path d="M9 4v16"/><path d="m3 9 3 3-3 3"/><path d="M14 8V6c0-1.1.9-2 2-2h4c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2h-4c-1.1 0-2-.9-2-2v-2"/></svg>
+                SALURAN
+            </a>
+        </div>
+
+        <!-- LIST PRODUK -->
+        <div class="w-full flex items-center justify-between mb-4 px-1">
+            <h2 class="text-xs font-bold text-gray-500 uppercase tracking-wider">Pilih Layanan</h2>
+            <div class="h-[1px] flex-1 bg-[#222] ml-4"></div>
+        </div>
+
+        <div class="w-full space-y-3 pb-20" id="product-container">
+            <!-- Items Injected by JS -->
+        </div>
+
+        <!-- FOOTER -->
+        <div class="mt-8 text-center">
+            <p class="text-[10px] text-gray-700 font-mono">VENZXPLOIT © 2026</p>
+        </div>
+    </div>
+
+    <!-- === MODAL POPUP === -->
+    <div id="product-modal" class="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-4 bg-black/90 backdrop-blur-sm modal-hidden transition-all duration-300">
+        
+        <!-- Area Klik Luar untuk Tutup -->
+        <div class="absolute inset-0" onclick="closeModal()"></div>
+
+        <div class="bg-[#111] border-t sm:border border-[#222] w-full sm:max-w-sm sm:rounded-2xl rounded-t-3xl p-6 relative z-10 shadow-2xl flex flex-col max-h-[85vh]">
+            
+            <!-- Garis Handle Mobile -->
+            <div class="w-10 h-1 bg-[#333] rounded-full mx-auto mb-6 sm:hidden"></div>
+
+            <!-- Tombol Close Desktop -->
+            <button onclick="closeModal()" class="hidden sm:block absolute top-4 right-4 text-gray-500 hover:text-white">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+            </button>
+
+            <!-- Header Modal -->
+            <div class="flex items-center gap-4 mb-6">
+                <div class="w-14 h-14 bg-black rounded-xl p-1 border border-[#222] shrink-0">
+                    <img id="modal-img" src="" class="w-full h-full object-cover rounded-lg" alt="Icon">
+                </div>
+                <div>
+                    <div id="modal-cat" class="text-[10px] font-bold text-red-500 mb-0.5 uppercase">Premium Hack</div>
+                    <h3 id="modal-title" class="text-lg font-bold text-white leading-tight">PRODUCT NAME</h3>
+                </div>
+            </div>
+
+            <!-- List Harga -->
+            <div class="flex-1 overflow-y-auto space-y-2 pr-1 hide-scroll" id="modal-prices">
+                <!-- Prices here -->
+            </div>
+            
+            <button onclick="closeModal()" class="mt-4 w-full py-3 text-xs font-bold text-gray-500 uppercase sm:hidden">Tutup</button>
+        </div>
+    </div>
+
+    <script>
+        // CONFIG DATA
+        const logos = {
+            ff: "freefier.jpg",
+            pubg: "pubg.jpg",
+            mlbb: "mobilelegend.jpg",
+            panel: "freefier.jpg"
+        };
+
+        const products = [
+            {
+                name: "FREE FIRE IOS MOD",
+                cat: "IOS / IPHONE",
+                img: logos.ff,
+                prices: [
+                    { d: "1 HARI", p: "50K" },
+                    { d: "7 HARI", p: "150K" },
+                    { d: "30 HARI", p: "350K" }
+                ]
+            },
+            {
+                name: "FREE FIRE ANDROID",
+                cat: "MOD MENU ANDROID",
+                img: logos.ff,
+                prices: [
+                    { d: "3 HARI", p: "25K" },
+                    { d: "7 HARI", p: "50K" },
+                    { d: "15 HARI", p: "70K" },
+                    { d: "30 HARI", p: "100K" }
+                ]
+            },
+            {
+                name: "FILE SCRIPT FF",
+                cat: "DATA / FILE ONLY",
+                img: logos.ff,
+                prices: [
+                    { d: "DADA HS (PERM)", p: "50K" },
+                    { d: "LEHER HS (PERM)", p: "75K" },
+                    { d: "AIMBOT (PERM)", p: "60K" }
+                ]
+            },
+            {
+                name: "PUBG MOBILE IOS",
+                cat: "IOS GLOBAL/INDO",
+                img: logos.pubg,
+                prices: [
+                    { d: "3 HARI", p: "40K" },
+                    { d: "15 HARI", p: "120K" },
+                    { d: "30 HARI", p: "150K" }
+                ]
+            },
+            {
+                name: "PUBG MOBILE ANDROID",
+                cat: "ANDROID ROOT/NON",
+                img: logos.pubg,
+                prices: [
+                    { d: "1 HARI", p: "15K" },
+                    { d: "7 HARI", p: "50K" },
+                    { d: "15 HARI", p: "100K" },
+                    { d: "30 HARI", p: "130K" }
+                ]
+            },
+            {
+                name: "MLBB MOD MENU",
+                cat: "MAPHACK & DRONE",
+                img: logos.mlbb,
+                prices: [
+                    { d: "3 HARI", p: "80K" },
+                    { d: "7 HARI", p: "100K" },
+                    { d: "15 HARI", p: "120K" },
+                    { d: "30 HARI", p: "200K" }
+                ]
+            },
+            {
+                name: "PANEL PC / EMULATOR",
+                cat: "PC CHEAT",
+                img: logos.panel,
+                prices: [
+                    { d: "1 HARI", p: "25K" },
+                    { d: "3 HARI", p: "50K" },
+                    { d: "7 HARI", p: "80K" },
+                    { d: "30 HARI", p: "150K" }
+                ]
+            }
+        ];
+
+        // RENDER PRODUCTS
+        const container = document.getElementById('product-container');
+        
+        products.forEach(p => {
+            const el = document.createElement('div');
+            el.className = "group bg-[#111] rounded-xl p-3 flex items-center gap-4 cursor-pointer border border-[#222] hover:border-red-800 transition-all active:scale-[0.98]";
+            el.onclick = () => openModal(p);
+            
+            el.innerHTML = `
+                <div class="w-12 h-12 bg-black rounded-lg p-0.5 shrink-0 border border-[#222] overflow-hidden">
+                    <img src="${p.img}" class="w-full h-full object-cover rounded-md" alt="icon">
+                </div>
+                <div class="flex-1 min-w-0">
+                    <div class="text-[9px] font-bold text-gray-500 uppercase mb-0.5 tracking-wide">${p.cat}</div>
+                    <h3 class="font-bold text-sm text-gray-200 truncate group-hover:text-white">${p.name}</h3>
+                </div>
+                <div class="w-8 h-8 flex items-center justify-center rounded-full bg-[#0a0a0a] text-gray-600 group-hover:text-red-500 transition">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+            `;
+            container.appendChild(el);
+        });
+
+        // MODAL FUNCTIONS
+        const modal = document.getElementById('product-modal');
+        const mTitle = document.getElementById('modal-title');
+        const mCat = document.getElementById('modal-cat');
+        const mImg = document.getElementById('modal-img');
+        const mPrices = document.getElementById('modal-prices');
+
+        function openModal(item) {
+            mTitle.innerText = item.name;
+            mCat.innerText = item.cat;
+            mImg.src = item.img;
+            mPrices.innerHTML = '';
+
+            item.prices.forEach(pr => {
+                const btn = document.createElement('button');
+                btn.className = "w-full bg-[#181818] hover:bg-[#202020] border border-[#252525] hover:border-red-900/50 p-3 rounded-xl flex justify-between items-center transition-all group active:scale-95";
+                btn.onclick = () => buyItem(item.name, pr.d, pr.p);
+                btn.innerHTML = `
+                    <span class="text-xs font-bold text-gray-400 group-hover:text-white">${pr.d}</span>
+                    <span class="text-sm font-bold text-red-500 font-mono">${pr.p}</span>
+                `;
+                mPrices.appendChild(btn);
+            });
+
+            modal.classList.remove('modal-hidden');
+            modal.classList.add('modal-visible');
+        }
+
+        function closeModal() {
+            modal.classList.remove('modal-visible');
+            modal.classList.add('modal-hidden');
+        }
+
+        function buyItem(name, dur, price) {
+            const msg = `*ORDER VENZXPLOIT*\n\nOrder: ${name}\nDurasi: ${dur}\nHarga: ${price}\n\nVia QRIS/DANA ada bang?`;
+            const url = `https://wa.me/6285700513821?text=${encodeURIComponent(msg)}`;
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
